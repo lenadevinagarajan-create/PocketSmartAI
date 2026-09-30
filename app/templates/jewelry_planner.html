@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Jewelry Budget Planner · PocketSmart AI{% endblock %}
+{% block content %}
+<section class="page-head"><p class="eyebrow">POCKETSMART AI</p><h1>Jewelry Budget Planner</h1><p>Enter your details and let the recommendation engine build a budget-aware plan.</p></section>
+<div class="planner-layout">
+  <form id="jewelryForm" class="panel">
+
+<label>Budget (₹)<input name="budget" type="number" min="1" step="1" required></label>
+<label>Occasion<input name="occasion" placeholder="Wedding, birthday, festival..." required></label>
+<label>Style<select name="style"><option>elegant</option><option>traditional</option><option>minimalist</option><option>statement</option><option>contemporary</option></select></label>
+<label>Preferences<textarea name="preferences" placeholder="Gold-tone, pearl, jhumka, necklace, color preference..."></textarea></label>
+<label>Optional outfit image<input name="outfit_image" type="file" accept="image/jpeg,image/png,image/webp"></label>
+<p class="hint">The image is sent to Gemini only when a Gemini API key is configured. Do not upload sensitive personal documents.</p>
+
+    <button class="btn primary" type="submit">Generate recommendations</button>
+    <p id="message" class="message"></p>
+  </form>
+  <section id="result" class="panel result hidden"></section>
+</div>
+{% endblock %}
+{% block scripts %}<script src="/static/js/jewelry_planner.js"></script>{% endblock %}

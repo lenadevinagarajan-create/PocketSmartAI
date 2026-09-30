@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Home Interior Budget Planner · PocketSmart AI{% endblock %}
+{% block content %}
+<section class="page-head"><p class="eyebrow">POCKETSMART AI</p><h1>Home Interior Budget Planner</h1><p>Enter your details and let the recommendation engine build a budget-aware plan.</p></section>
+<div class="planner-layout">
+  <form id="homeForm" class="panel">
+
+<label>Total budget (₹)<input name="budget" type="number" min="1" step="1" required></label>
+<label>Rooms / quantities<input name="rooms" placeholder="Living room: 1 sofa, 2 lights; Bedroom: 1 bed" required></label>
+<label>Style<select name="style"><option>modern</option><option>minimalist</option><option>traditional</option><option>contemporary</option><option>bohemian</option></select></label>
+<label>Extra requirements<textarea name="requirements" placeholder="Colors, must-have items, size limits..."></textarea></label>
+
+    <button class="btn primary" type="submit">Generate recommendations</button>
+    <p id="message" class="message"></p>
+  </form>
+  <section id="result" class="panel result hidden"></section>
+</div>
+{% endblock %}
+{% block scripts %}<script src="/static/js/home_planner.js"></script>{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Party Budget Planner · PocketSmart AI{% endblock %}
+{% block content %}
+<section class="page-head"><p class="eyebrow">POCKETSMART AI</p><h1>Party Budget Planner</h1><p>Enter your details and let the recommendation engine build a budget-aware plan.</p></section>
+<div class="planner-layout">
+  <form id="partyForm" class="panel">
+
+<label>Total budget (₹)<input name="budget" type="number" min="1" step="1" required></label>
+<label>Guest count<input name="guests" type="number" min="1" required></label>
+<label>Event type<input name="event_type" placeholder="Birthday, wedding, corporate..." required></label>
+<label>Venue details<input name="venue" placeholder="City / indoor / outdoor / venue preference"></label>
+<label>Preferences<textarea name="preferences" placeholder="Food type, decoration theme, entertainment..."></textarea></label>
+
+    <button class="btn primary" type="submit">Generate recommendations</button>
+    <p id="message" class="message"></p>
+  </form>
+  <section id="result" class="panel result hidden"></section>
+</div>
+{% endblock %}
+{% block scripts %}<script src="/static/js/party_planner.js"></script>{% endblock %}

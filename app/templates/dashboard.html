@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Dashboard · PocketSmart AI{% endblock %}
+{% block content %}
+<section class="page-head"><p class="eyebrow">YOUR SPACE</p><h1>Dashboard</h1><p id="welcome"></p></section>
+<div class="grid three">
+  <a class="card" href="/planner/home"><h2>⌂ Home</h2><p>Build a home plan.</p></a>
+  <a class="card" href="/planner/party"><h2>✦ Party</h2><p>Build an event plan.</p></a>
+  <a class="card" href="/planner/jewelry"><h2>◇ Jewelry</h2><p>Build an occasion look.</p></a>
+</div>
+<section class="panel"><div class="section-title"><h2>Recommendation history</h2><button class="btn secondary" id="logoutBtn">Logout</button></div><div id="history"></div></section>
+{% endblock %}
+{% block scripts %}<script src="/static/js/dashboard.js"></script>{% endblock %}
